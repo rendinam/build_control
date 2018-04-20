@@ -6,6 +6,7 @@ import org.yaml.snakeyaml.Yaml
 
 def yaml = new Yaml()
 this.manifest_data_raw = readFileFromWorkspace("manifests/${manifest_file}")
+                            //sandbox()
 println("\n\nmanifest_data_raw:\n ${this.manifest_data_raw}")
 def config = yaml.load(manifest_data_raw)
 
@@ -103,6 +104,7 @@ for (label in labels) {
                 definition {
                     cps {
                         script(readFileFromWorkspace("jenkins/${this.script}"))
+                        sandbox()
                     }
                 }
             }
