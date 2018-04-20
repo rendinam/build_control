@@ -104,7 +104,6 @@ for (label in labels) {
                 definition {
                     cps {
                         script(readFileFromWorkspace("jenkins/${this.script}"))
-                        sandbox()
                     }
                 }
             }
