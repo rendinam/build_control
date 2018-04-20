@@ -103,7 +103,6 @@ for (label in labels) {
                 definition {
                     cps {
                         script(readFileFromWorkspace("jenkins/${this.script}"))
-                        sandbox()
                     }
                 }
             }
@@ -160,7 +159,6 @@ for (label in labels) {
                     definition {
                         cps {
                             script(readFileFromWorkspace("jenkins/package_builder.groovy"))
-                            sandbox()
                         }
                     }
                 } // end pipelineJob
